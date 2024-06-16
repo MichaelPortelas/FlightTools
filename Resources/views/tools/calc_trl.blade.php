@@ -29,7 +29,7 @@
                         </div>
                     </div>
                     <div class="text-center">
-                        <button name="btntrl" type="submit" id="btntrl" class="btn btn-sm btn-success"><i class="fas fa-solid fa-plane me-2"></i> @lang('FlTools::tools.Ta')</button>
+                        <button name="btntrl" type="submit" id="btntrl" class="btn btn-sm btn-success"><i class="fas fa-solid fa-plane me-2"></i> @lang('FlTools::tools.CalcTrlBtn')</button>
                     </div>
                 </div>
                 <div class="card-footer p-1 text-end">
