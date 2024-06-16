@@ -1,0 +1,31 @@
+{
+    "name": "VENDOR/flighttools-module",
+    "type": "phpvms-module",
+    "description": "",
+    "authors": [
+        {
+            "name": "",
+            "email": ""
+        }
+    ],
+    "require": {
+        "composer/installers": "~1.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\FlightTools\\Providers\\AppServiceProvider",
+                "Modules\\FlightTools\\Providers\\EventServiceProvider",
+                "Modules\\FlightTools\\Providers\\RouteServiceProvider"
+            ],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\FlightTools\\": "."
+        }
+    }
+}

@@ -1,0 +1,12 @@
+{
+    "name": "FlightTools",
+    "alias": "flighttools",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [ ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}
