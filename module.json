@@ -1,11 +1,13 @@
 {
     "name": "FlightTools",
     "alias": "flighttools",
-    "description": "",
+    "description": "phpVMS v7 module for more tools calc_Trl, aero_cal etc.",
     "keywords": [],
     "active": 1,
     "order": 0,
-    "providers": [ ],
+    "providers": [
+        "Modules\\FlightTools\\Providers\\Tools_ServiceProvider"
+    ],
     "aliases": {},
     "files": [],
     "requires": []

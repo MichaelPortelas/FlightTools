@@ -4,8 +4,8 @@
     "description": "",
     "authors": [
         {
-            "name": "",
-            "email": ""
+            "name": "Michaël.P ACIV",
+            "email": "vre-ceo@aircotedivoirevirtuel.com"
         }
     ],
     "require": {
@@ -14,9 +14,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Modules\\FlightTools\\Providers\\AppServiceProvider",
-                "Modules\\FlightTools\\Providers\\EventServiceProvider",
-                "Modules\\FlightTools\\Providers\\RouteServiceProvider"
+                "Modules\\FlightTools\\Providers\\Tools_ServiceProvider"
             ],
             "aliases": {
 
