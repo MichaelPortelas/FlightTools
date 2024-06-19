@@ -17,14 +17,14 @@
                     <div class="mb-3">
                         <label for="qnh" class="form-label">@lang('FlTools::tools.QnhCur')</label>
                         <div class="input-group">
-                            <input class="form-control" name="qnh" id="qnh" size="5" type="number" placeholder="{{ $qnh }}" minlength="3" maxlength="4">
+                            <input class="form-control" name="qnh" id="qnh" size="5" type="number" placeholder="{{ old('qnh') ?: session('qnh', $qnh) }}" minlength="3" maxlength="4">
                             <span class="input-group-text">Hpa</span>
                         </div>
                     </div>
                     <div class="mb-3">
                         <label for="ta" class="form-label">@lang('FlTools::tools.Ta')</label>
                         <div class="input-group">
-                            <input class="form-control" name="ta" id="ta" size="5" type="number" placeholder="{{ $ta }}" minlength="4" maxlength="5">
+                            <input class="form-control" name="ta" id="ta" size="5" type="number" placeholder="{{ old('ta') ?: session('ta', $ta) }}" minlength="4" maxlength="5">
                             <span class="input-group-text">Ft</span>
                         </div>
                     </div>
@@ -40,7 +40,7 @@
     </div>
 </div>
 
-@if($calcTrl)
+@if(session('calcTrl'))
 <div class="row justify-content-center">
     <div class="col-md-8">
         <div class="card mb-4">
@@ -55,7 +55,7 @@
                             <table class="table table-sm table-striped text-center">
                                 <tbody>
                                     <tr>
-                                        <td><strong>Altitude 1013 :</strong> {{ $alt1013 }} Ft</td>
+                                        <td><strong>Altitude 1013 :</strong> {{ session('alt1013') }} Ft</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -70,9 +70,9 @@
                                         <td><strong>FLeq20</strong></td>
                                     </tr>
                                     <tr>
-                                        <td>FL{{ $flEq10 }}</td>
-                                        <td>FL{{ $trl }}</td>
-                                        <td>FL{{ $flEq20 }}</td>
+                                        <td>FL{{ session('flEq10') }}</td>
+                                        <td>FL{{ session('trl') }}</td>
+                                        <td>FL{{ session('flEq20') }}</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -80,7 +80,7 @@
                         <hr>
                         <div class="text-center">
                             <h6><strong>@lang('FlTools::tools.FinalResult') :</strong></h6>
-                            <p class="fs-2" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);">@lang('FlTools::tools.TrlResult') <strong>FL{{ $trl }}</strong></p>
+                            <p class="fs-2" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);">@lang('FlTools::tools.TrlResult') <strong>FL{{ session('trl') }}</strong></p>
                         </div>
                     </div>
                     <div class="col"></div> 

@@ -3,7 +3,7 @@
 namespace Modules\FlightTools\Http\Controllers;
 
 use App\Contracts\Controller;
-use Illuminate\Http\Request;
+use Modules\FlightTools\Http\Requests\CalcTrlRequest;
 
 /**
  * Class $CLASS$
@@ -27,7 +27,7 @@ class Tools_Controller extends Controller
         ]);
     }
 
-    public function calcTrl(Request $request)
+    public function calcTrl(CalcTrlRequest $request)
     {
         $qnh = $request->qnh;
         $ta = $request->ta;
@@ -46,14 +46,15 @@ class Tools_Controller extends Controller
             $trl = round($flEq10, -1);
         }
 
-        return view('FlTools::tools.calc_trl', [
+        return redirect()->back()->with([
+            'success' => 'Calcul du TRL effectué avec succès!',
             'calcTrl' => $calcTrl,
             'qnh' => $qnh,
             'ta' => $ta,
-            'alt1013'=>$alt1013, 
-            'flEq10'=>$flEq10, 
-            'trl'=>$trl, 
-            'flEq20'=>$flEq20,
+            'alt1013' => $alt1013,
+            'flEq10' => $flEq10,
+            'trl' => $trl,
+            'flEq20' => $flEq20,
         ]);
     }   
 }

@@ -37,7 +37,7 @@ class Tools_ServiceProvider extends ServiceProvider
         ], function () {
             // Calculate TRL
             Route::get('calc_trl', 'Tools_Controller@calc_trl')->name('calc_trl');
-            Route::match(['get', 'post'], 'calc_trl_calcTrl', 'Tools_Controller@calcTrl')->name('calc_trl.calcTrl');
+            Route::post('calc_trl_calcTrl', 'Tools_Controller@calcTrl')->name('calc_trl.calcTrl');
         });
     }
 
