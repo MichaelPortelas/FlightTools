@@ -2,6 +2,7 @@
 
 return [
     'CalcTrl_title'     =>  'Calcul du niveau de transition',
+    'CalcTrl_menu'      =>  'Calculer Trl',
     'QnhCur'            =>  'QNH Actuel',
     'Ta'                =>  'Altitude de Transition',
     'Results'           =>  'Détails & Résultats',

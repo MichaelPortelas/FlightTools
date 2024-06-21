@@ -2,6 +2,7 @@
 
 return [
     'CalcTrl_title'     =>  'Berechnung des Übergangsniveaus',
+    'CalcTrl_menu'      =>  'Berechnen Trl',
     'QnhCur'            =>  'QNH Strom',
     'Ta'                =>  'Übergangshöhe',
     'Results'           =>  'Details & Ergebnisse',
