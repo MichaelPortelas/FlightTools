@@ -22,7 +22,7 @@ class CalcTod_Controller extends Controller
 
 
         return view('FlTools::tools.calc_tod', [
-            'calcTrl' => $calcTod,
+            'calcTod' => $calcTod,
             'actfl' => $actfl,
             'fixfl' => $fixfl,
             'gspeed' => $gspeed,
