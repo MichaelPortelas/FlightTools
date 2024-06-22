@@ -33,7 +33,7 @@
                     </div>
                 </div>
                 <div class="card-footer p-1 text-end">
-                    <p>Enhanced by <a href="https://aircotedivoirevirtuel.com/" target="_blank"><strong>ACIV</strong></a></p>
+                    <p>Enhanced by <a href="https://github.com/MichaelPortelas" target="_blank"><strong>Michael.P</strong></a></p>
                 </div>
             </div>
         </form>
