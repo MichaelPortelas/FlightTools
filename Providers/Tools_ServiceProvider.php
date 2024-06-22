@@ -36,8 +36,12 @@ class Tools_ServiceProvider extends ServiceProvider
             'namespace'  => 'Modules\FlightTools\Http\Controllers',
         ], function () {
             // Calculate TRL
-            Route::get('calc_trl', 'Tools_Controller@calc_trl')->name('calc_trl');
-            Route::post('calc_trl_calcTrl', 'Tools_Controller@calcTrl')->name('calc_trl.calcTrl');
+            Route::get('calc_trl', 'CalcTrl_Controller@calc_trl')->name('calc_trl');
+            Route::post('calc_trl_calcTrl', 'CalcTrl_Controller@calcTrl')->name('calc_trl.calcTrl');
+            // Calculate TOD
+            Route::get('calc_tod', 'CalcTod_Controller@calc_tod')->name('calc_tod');
+            Route::post('calc_tod_calcTod', 'CalcTod_Controller@calcTod')->name('calc_tod.calcTod');
+            
         });
     }
 

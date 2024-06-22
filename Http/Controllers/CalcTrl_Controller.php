@@ -9,7 +9,7 @@ use Modules\FlightTools\Http\Requests\CalcTrlRequest;
  * Class $CLASS$
  * @package 
  */
-class Tools_Controller extends Controller
+class CalcTrl_Controller extends Controller
 {
     
     public function calc_trl()
