@@ -4,14 +4,22 @@ namespace Modules\FlightTools\Http\Controllers;
 
 use App\Contracts\Controller;
 use Modules\FlightTools\Http\Requests\CalcTodRequest;
+use Modules\FlightTools\Services\CalcTodService;
 
 /**
  * Class $CLASS$
- * @package 
+ * @package Modules\FlightTools\Http\Controllers 
  */
 class CalcTodController extends Controller
 {
     
+    protected $calcTodService;
+
+    public function __construct(CalcTodService $calcTodService)
+    {
+        $this->calcTodService = $calcTodService;
+    }
+
     public function showForm()
     {
         $calcTod = false;
@@ -37,9 +45,8 @@ class CalcTodController extends Controller
 	
         $calcTod = true;
 
-        $tod = ($actfl-$fixfl)/3;
-        
-        $vSpeed = round(5*$gspeed, -2);
+        $tod = $this->calcTodService->calculateTod($actfl, $fixfl);        
+        $vSpeed = $this->calcTodService->calculateVSpeed($gspeed);
         
         return redirect()->route('FlTools.calc_tod.showForm')->withInput()->with([
             'success' => __('FlTools::tools.Success'),

@@ -4,6 +4,8 @@ namespace Modules\FlightTools\Providers;
 
 use App\Services\ModuleService;
 use Illuminate\Support\ServiceProvider;
+use Modules\FlightTools\Services\CalcTodService;
+use Modules\FlightTools\Services\CalcTrlService;
 use Route;
 
 /**
@@ -24,7 +26,14 @@ class Tools_ServiceProvider extends ServiceProvider
     }
 
     public function register()
-    {        
+    { 
+        $this->app->singleton(CalcTodService::class, function ($app) {
+            return new CalcTodService();
+        });
+        
+        $this->app->singleton(CalcTrlService::class, function ($app) {
+            return new CalcTrlService();
+        });
     }
 
     protected function registerRoutes()
@@ -41,6 +50,9 @@ class Tools_ServiceProvider extends ServiceProvider
             // Calculate TOD
             Route::get('calc_tod', 'CalcTodController@showForm')->name('calc_tod.showForm');
             Route::post('calc_tod', 'CalcTodController@calcTod')->name('calc_tod.calculate');
+            // Calculate Aero
+            Route::get('calc_aero', 'CalcAeroController@showForm')->name('calc_aero.showForm');
+            Route::post('calc_aero', 'CalcAeroController@calcAero')->name('calc_aero.calculate');
             
         });
     }
