@@ -3,8 +3,14 @@
 
 @section('content')
 <div class="row justify-content-center">
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
     <div class="col-md-6">
-        <form class="form" action="{{ route('FlTools.calc_trl.calcTrl') }}" method="post">
+        <form class="form" action="{{ route('FlTools.calc_trl.calculate') }}" method="post">
+            @csrf
             <div class="card mb-4">
                 <div class="card-header">
                     <h5 class="card-title mb-0 d-flex align-items-center">
@@ -13,13 +19,15 @@
                     </h5>
                 </div>
                 <div class="card-body">
-                    @csrf
                     <div class="mb-3">
                         <label for="qnh" class="form-label">@lang('FlTools::tools.QnhCur')</label>
                         <div class="input-group">
                             <input class="form-control" name="qnh" id="qnh" size="5" type="number" placeholder="{{ old('qnh') ?: session('qnh', $qnh) }}" minlength="3" maxlength="4">
                             <span class="input-group-text">Hpa</span>
                         </div>
+                        @error('qnh')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="mb-3">
                         <label for="ta" class="form-label">@lang('FlTools::tools.Ta')</label>
@@ -27,6 +35,9 @@
                             <input class="form-control" name="ta" id="ta" size="5" type="number" placeholder="{{ old('ta') ?: session('ta', $ta) }}" minlength="4" maxlength="5">
                             <span class="input-group-text">Ft</span>
                         </div>
+                        @error('ta')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="text-center">
                         <button name="btntrl" type="submit" id="btntrl" class="btn btn-sm btn-success"><i class="fas fa-solid fa-plane me-2"></i> @lang('FlTools::tools.CalcTrlBtn')</button>

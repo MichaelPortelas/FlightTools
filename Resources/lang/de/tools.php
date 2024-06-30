@@ -5,6 +5,7 @@ return [
     // COMMON
     'Results'           =>  'Details & Ergebnisse',
     'FinalResult'       =>  'Endergebnis',
+    'Success'           =>  'Die Berechnung war erfolgreich',
 
     // CALC TRL
     'CalcTrl_title'     =>  'Berechnung der Übergangshöhe',

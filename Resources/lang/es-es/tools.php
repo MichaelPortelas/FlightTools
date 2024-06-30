@@ -5,6 +5,7 @@ return [
     // COMMON
     'Results'           =>  'Detalles y Resultados',
     'FinalResult'       =>  'Resultado final',
+    'Success'           =>  'El cálculo se realizó con éxito',
 
     // CALC TRL
     'CalcTrl_title'     =>  'Cálculo del nivel de transición',

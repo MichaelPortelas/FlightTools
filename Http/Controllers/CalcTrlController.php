@@ -9,10 +9,10 @@ use Modules\FlightTools\Http\Requests\CalcTrlRequest;
  * Class $CLASS$
  * @package 
  */
-class CalcTrl_Controller extends Controller
+class CalcTrlController extends Controller
 {
     
-    public function calc_trl()
+    public function showForm()
     {
         $calcTrl = false;
 
@@ -46,11 +46,9 @@ class CalcTrl_Controller extends Controller
             $trl = round($flEq10, -1);
         }
 
-        return redirect()->back()->with([
-            'success' => 'Calcul du TRL effectué avec succès!',
+        return redirect()->route('FlTools.calc_trl.showForm')->withInput()->with([
+            'success' => __('FlTools::tools.Success'),
             'calcTrl' => $calcTrl,
-            'qnh' => $qnh,
-            'ta' => $ta,
             'alt1013' => $alt1013,
             'flEq10' => $flEq10,
             'trl' => $trl,

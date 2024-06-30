@@ -9,10 +9,10 @@ use Modules\FlightTools\Http\Requests\CalcTodRequest;
  * Class $CLASS$
  * @package 
  */
-class CalcTod_Controller extends Controller
+class CalcTodController extends Controller
 {
     
-    public function calc_tod()
+    public function showForm()
     {
         $calcTod = false;
 
@@ -40,14 +40,10 @@ class CalcTod_Controller extends Controller
         $tod = ($actfl-$fixfl)/3;
         
         $vSpeed = round(5*$gspeed, -2);
-
         
-        return redirect()->back()->with([
-            'success' => 'Calcul du TOD effectué avec succès!',
-            'calcTod' => $calcTod,
-            'actfl' => $actfl,
-            'fixfl' => $fixfl,
-            'gspeed' => $gspeed,
+        return redirect()->route('FlTools.calc_tod.showForm')->withInput()->with([
+            'success' => __('FlTools::tools.Success'),
+            'calcTod' => $calcTod,            
             'tod' => round($tod,1),
             'vSpeed' => $vSpeed,
         ]);
