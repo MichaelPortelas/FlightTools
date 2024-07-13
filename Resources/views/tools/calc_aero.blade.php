@@ -57,7 +57,7 @@
                     <div class="form-group mb-3">
                         <div class="row">
                             <div class="col-md-4">
-                                <label for="distance" class="form-label">@lang('FlTools::tools.Distance') */label>
+                                <label for="distance" class="form-label">@lang('FlTools::tools.Distance') *</label>
                                 <div class="input-group">
                                     <input class="form-control" name="distance" id="distance" type="number" value="{{ old('distance', session('distance', $distance)) }}" maxlength="5">
                                     <span class="input-group-text">Nm</span>
