@@ -21,35 +21,38 @@
                 </div>
                 <div class="card-body">
                     <div class="mb-3">
-                        <label for="actfl" class="form-label">@lang('FlTools::tools.Actfl')</label>
+                        <label for="actfl" class="form-label">@lang('FlTools::tools.Actfl') *</label>
                         <div class="input-group">
                             <span class="input-group-text">FL</span>
-                            <input class="form-control" name="actfl" id="actfl" size="5" type="number" placeholder="{{ old('actfl') ?: session('actfl', $actfl) }}" minlength="1" maxlength="3">
+                            <input class="form-control" name="actfl" id="actfl" size="5" type="number" value="{{ old('actfl') ?: session('actfl', $actfl) }}" minlength="1" maxlength="3">
                         </div>
                         @error('actfl')
                             <div class="text-danger">{{ $message }}</div>
                         @enderror
                     </div>
                     <div class="mb-3">
-                        <label for="fixfl" class="form-label">@lang('FlTools::tools.Fixfl')</label>
+                        <label for="fixfl" class="form-label">@lang('FlTools::tools.Fixfl') *</label>
                         <div class="input-group">
                             <span class="input-group-text">FL</span>
-                            <input class="form-control" name="fixfl" id="fixfl" size="5" type="number" placeholder="{{ old('fixfl') ?: session('fixfl', $fixfl) }}" minlength="1" maxlength="3">
+                            <input class="form-control" name="fixfl" id="fixfl" size="5" type="number" value="{{ old('fixfl') ?: session('fixfl', $fixfl) }}" minlength="1" maxlength="3">
                         </div>
                         @error('fixfl')
                             <div class="text-danger">{{ $message }}</div>
                         @enderror
                     </div>
                     <div class="mb-3">
-                        <label for="gspeed" class="form-label">@lang('FlTools::tools.Gspeed')</label>
+                        <label for="gspeed" class="form-label">@lang('FlTools::tools.Gspeed') *</label>
                         <div class="input-group">
-                            <input class="form-control" name="gspeed" id="gspeed" size="5" type="number" placeholder="{{ old('gspeed') ?: session('gspeed', $gspeed) }}" minlength="2" maxlength="3">
+                            <input class="form-control" name="gspeed" id="gspeed" size="5" type="number" value="{{ old('gspeed') ?: session('gspeed', $gspeed) }}" minlength="2" maxlength="3">
                             <span class="input-group-text">Kt</span>
                         </div>
                         @error('gspeed')
                             <div class="text-danger">{{ $message }}</div>
                         @enderror
                     </div>
+
+                    <div class="form-text mb-3">* @lang('FlTools::tools.RequiredFields')</div>
+                    
                     <div class="text-center">
                         <button name="btntrl" type="submit" id="btntod" class="btn btn-sm btn-success"><i class="fas fa-solid fa-plane me-2"></i> @lang('FlTools::tools.CalcTodBtn')</button>
                     </div>
@@ -97,7 +100,7 @@
                     <div class="text-center">
                         <h6><strong>@lang('FlTools::tools.FinalResult') :</strong></h6>
                         <p class="fs-3" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);">
-                            {!! __('FlTools::tools.TodResult', ['gspeed' => session('gspeed'), 'tod' => session('tod'), 'vSpeed' => session('vSpeed'), 'fixfl' => session('fixfl'), 'actfl' => session('actfl')]) !!}
+                            {!! __('FlTools::tools.TodResult', ['gspeed' => session('gspeed', $gspeed), 'tod' => session('tod'), 'vSpeed' => session('vSpeed'), 'fixfl' => session('fixfl', $fixfl), 'actfl' => session('actfl', $actfl)]) !!}
                         </p>
                     </div>
                 </div>
