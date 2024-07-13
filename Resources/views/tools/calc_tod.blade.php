@@ -52,7 +52,7 @@
                     </div>
 
                     <div class="form-text mb-3">* @lang('FlTools::tools.RequiredFields')</div>
-                    
+
                     <div class="text-center">
                         <button name="btntrl" type="submit" id="btntod" class="btn btn-sm btn-success"><i class="fas fa-solid fa-plane me-2"></i> @lang('FlTools::tools.CalcTodBtn')</button>
                     </div>
@@ -100,7 +100,7 @@
                     <div class="text-center">
                         <h6><strong>@lang('FlTools::tools.FinalResult') :</strong></h6>
                         <p class="fs-3" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);">
-                            {!! __('FlTools::tools.TodResult', ['gspeed' => session('gspeed', $gspeed), 'tod' => session('tod'), 'vSpeed' => session('vSpeed'), 'fixfl' => session('fixfl', $fixfl), 'actfl' => session('actfl', $actfl)]) !!}
+                            {!! __('FlTools::tools.TodResult', ['gspeed' => old('gspeed'), 'tod' => session('tod'), 'vSpeed' => session('vSpeed'), 'fixfl' => old('fixfl'), 'actfl' => old('actfl')]) !!}
                         </p>
                     </div>
                 </div>
