@@ -6,6 +6,7 @@ return [
     'Results'           =>  'Detalles y Resultados',
     'FinalResult'       =>  'Resultado final',
     'Success'           =>  'El cálculo se realizó con éxito',
+    'RequiredFields'    => 'Campos Requeridos',
 
     // CALC TRL
     'CalcTrl_title'     =>  'Cálculo del nivel de transición',
@@ -31,4 +32,27 @@ return [
                                 para alcanzar el nivel de vuelo <strong>FL:fixfl</strong><br>
                                 desde el nivel de vuelo <strong>FL:actfl</strong>.
                             ',
+
+    // CALC AERO
+    'AviationMetricsCalculator' => 'Calculadora de Métricas de Aviación',
+    'IndicatedAirspeed'         => 'Velocidad Aérea Indicada',
+    'Altitude'                  => 'Altitud',
+    'MagneticHeading'           => 'Rumbo Magnético',
+    'Distance'                  => 'Distancia',
+    'WindOrigin'                => 'Origen del Viento',
+    'WindSpeed'                 => 'Velocidad del Viento',
+    'Temperature'               => 'Temperatura',
+    'CalculateMetrics'          => 'Calcular Métricas',
+    'AviationMetricsResults'    => 'Resultados de Métricas Aéreas',
+    'TrueAirspeed'              => 'Velocidad Aérea Verdadera',
+    'BaseFactor'                => 'Factor Base',
+    'NoWindTime'                => 'Tiempo sin Viento',
+    'WindAngle'                 => 'Ángulo del Viento',
+    'EffectiveWind'             => 'Viento Efectivo',
+    'MaximumDrift'              => 'Deriva Máxima',
+    'SineOfWindAngle'           => 'Seno del Ángulo del Viento',
+    'Drift'                     => 'Deriva',
+    'GroundSpeed'               => 'Velocidad en Tierra',
+    'NewBaseFactor'             => 'Nuevo Factor Base',
+    'WindAffectedTime'          => 'Tiempo Afectado por el Viento',
 ];

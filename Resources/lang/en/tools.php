@@ -6,6 +6,7 @@ return [
     'Results'           =>  'Details & Results',
     'FinalResult'       =>  'Final result',
     'Success'           =>  'The calculation was done successfully',
+    'RequiredFields'    =>  'RequiredFields',
 
     // CALC TRL
     'CalcTrl_title'     =>  'Transition level calculation',
@@ -31,4 +32,29 @@ return [
                                 to reach the flight level <strong>FL:fixfl</strong><br>
                                 from the flight level <strong>FL:actfl</strong>.
                             ',
+    
+    // CALC AERO
+    'AviationMetricsCalculator' => 'Aviation Metrics Calculator',
+    'IndicatedAirspeed'         => 'Indicated Airspeed',
+    'Altitude'                  => 'Altitude',
+    'MagneticHeading'           => 'Magnetic Heading',
+    'Distance'                  => 'Distance',
+    'WindOrigin'                => 'Wind Origin',
+    'WindSpeed'                 => 'Wind Speed',
+    'Temperature'               => 'Temperature',
+    'CalculateMetrics'          => 'Calculate Metrics',
+    'AviationMetricsResults'    => 'Aviation Metrics Results',
+    'TrueAirspeed'              => 'True Airspeed',
+    'BaseFactor'                => 'Base Factor',
+    'NoWindTime'                => 'No-Wind Time',
+    'WindAngle'                 => 'Wind Angle',
+    'EffectiveWind'             => 'Effective Wind',
+    'MaximumDrift'              => 'Maximum Drift',
+    'SineOfWindAngle'           => 'Sine of Wind Angle',
+    'Drift'                     => 'Drift',
+    'GroundSpeed'               => 'Ground Speed',
+    'NewBaseFactor'             => 'New Base Factor',
+    'WindAffectedTime'          => 'Wind-Affected Time',
+
+
 ];

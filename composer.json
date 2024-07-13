@@ -14,7 +14,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Modules\\FlightTools\\Providers\\Tools_ServiceProvider"
+                "Modules\\FlightTools\\Providers\\ToolsServiceProvider"
             ],
             "aliases": {
 
