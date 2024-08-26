@@ -13,8 +13,8 @@ class FLTools_YearsOfService extends Award
     
     public function check($minYears = null): bool
     {
-        // Set default value if $minYears is null
-        $minYears ??= 0;
+        // Set default value if $minYears is null and cast to int
+        $minYears = (int)($minYears ?? 0);
 
         // Check if the user is active
         if ($this->user->state !== UserState::ACTIVE) {

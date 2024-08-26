@@ -14,8 +14,8 @@ class FLTools_LegsInOneDay extends Award
     
     public function check($minLegs = null): bool
     {
-        // Set default value if $minLegs is null
-        $minLegs ??= 1;
+        // Set default value if $minLegs is null and cast to int
+        $minLegs = (int)($minLegs ?? 1);
 
         // Check if the user has any PIREPs (flights) recorded
         if(!$this->user->pireps()->exists())

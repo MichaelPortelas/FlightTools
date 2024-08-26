@@ -13,7 +13,7 @@ class FLTools_TotalDistance extends Award
     public function check($totalDistance = null): bool
     {
         // Set a default value for $totalDistance if it's not provided
-        $totalDistance ??= 1;
+        $totalDistance = (int) ($totalDistance ?? 1);
 
         // Check if the user has any PIREPs (flights) recorded
         if(!$this->user->pireps()->exists())
@@ -27,7 +27,7 @@ class FLTools_TotalDistance extends Award
             ->sum('distance');
         
         // Return true if the total distance meets or exceeds the required value
-        return $totalDistanceUser >= (int) $totalDistance;
+        return $totalDistanceUser >= $totalDistance;
         
     }
 }

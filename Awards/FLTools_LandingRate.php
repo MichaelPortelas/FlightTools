@@ -14,7 +14,7 @@ class FLTools_LandingRate extends Award
         // Have the default landing rate if it hasn't been set in the admin
         // It's best to make sure you set a default value if you're using it
         
-        $landing_rate ??= -300;
+        $landing_rate = (int) ($landing_rate ?? -300);
         
         if(!$this->user->last_pirep) {
             return false;
@@ -22,7 +22,7 @@ class FLTools_LandingRate extends Award
         
         $lastLandingRate = $this->user->last_pirep->landing_rate;
 
-        if((int) $lastLandingRate >= (int) $landing_rate) {
+        if( $lastLandingRate >= $landing_rate) {
             return true;
         }
         
