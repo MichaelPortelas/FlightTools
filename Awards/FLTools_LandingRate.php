@@ -16,16 +16,6 @@ class FLTools_LandingRate extends Award
         
         $landing_rate = (int) ($landing_rate ?? -300);
         
-        if(!$this->user->last_pirep) {
-            return false;
-        }
-        
-        $lastLandingRate = $this->user->last_pirep->landing_rate;
-
-        if( $lastLandingRate >= $landing_rate) {
-            return true;
-        }
-        
-        return false;
+        return optional($this->user->last_pirep)->landing_rate >= $landing_rate;
     }
 }
