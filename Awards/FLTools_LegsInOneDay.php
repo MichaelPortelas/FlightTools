@@ -6,6 +6,7 @@ use App\Contracts\Award;
 use Carbon\Carbon;
 use App\Models\Pirep;
 use App\Models\Enums\PirepState;
+use Illuminate\Support\Facades\Log;
 
 class FLTools_LegsInOneDay extends Award
 {
@@ -37,8 +38,23 @@ class FLTools_LegsInOneDay extends Award
         // Check if there is a sequence of consecutive legs that meets the minimum requirement
         return $todaysPireps->sliding($minLegs)->contains(function ($legSequence) {
             return $legSequence->every(function ($pirep, $key) use ($legSequence) {
-                // Check if all consecutive legs connect properly
-                return $key === 0 || $legSequence[$key - 1]->arr_airport_id === $pirep->dep_airport_id;
+                if ($key === 0) {
+                    return true; 
+                }
+
+                $previousLeg = $legSequence[$key - 1];
+                $currentLeg = $pirep;
+
+                if (empty($currentLeg->dpt_airport_id)) {
+                    Log::debug("Current Leg Departure Airport ID is empty. Skipping this leg.");
+                    return false; // Skip this leg if departure airport ID is empty
+                }
+
+                $connected = $previousLeg->arr_airport_id === $currentLeg->dpt_airport_id;
+                
+                Log::debug("Legs connected: " . ($connected ? 'Yes' : 'No'));
+        
+                return $connected;
             });
         });
     }
