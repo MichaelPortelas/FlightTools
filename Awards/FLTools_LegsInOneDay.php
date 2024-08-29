@@ -68,6 +68,12 @@ class FLTools_LegsInOneDay extends Award
                         return false;
                     }
 
+                    // Check if the departure and arrival airport IDs are identical
+                    if ($currentLeg->dpt_airport_id === $currentLeg->arr_airport_id) {
+                        Log::info("Departure and arrival airports are identical for this leg. Skipping this leg.");
+                        return false;
+                    }
+
                     $connected = $previousLeg->arr_airport_id === $currentLeg->dpt_airport_id;
                     
                     Log::info("Legs connected: " . ($connected ? 'Yes' : 'No'));
