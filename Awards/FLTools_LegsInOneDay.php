@@ -37,9 +37,6 @@ class FLTools_LegsInOneDay extends Award
             ->orderBy('submitted_at', 'asc')
             ->get();
 
-        // Log the content of $pireps for debugging
-        Log::info("Retrieved PIREPs for date $lastPirepDate", $pireps->toArray());
-
         // If the pilot has fewer than the minimum number of validated PIREPs, return false
         if ($pireps->count() < $minLegs) {
             Log::info("Not enough PIREPs to check. Required: $minLegs, Found: " . $pireps->count());
@@ -48,9 +45,7 @@ class FLTools_LegsInOneDay extends Award
 
         // Check for sequences of PIREPs submitted on the same day
         return $pireps->sliding($minLegs)->contains(function ($legSequence) use ($minLegs) {
-            // Log the current sequence for debugging
-            Log::info("Checking sequence", $legSequence->toArray());
-
+            
             if ($legSequence->count() < $minLegs) {
                 Log::info("Sequence length is less than $minLegs. Skipping this sequence.");
                 return false;
