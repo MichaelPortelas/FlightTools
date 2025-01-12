@@ -2,6 +2,14 @@
     "name": "FlightTools",
     "alias": "flighttools",
     "description": "phpVMS v7 module for more tools calc_Trl, aero_cal etc.",
+    "version": "1.1.0",
+    "readme_url": "https://github.com/MichaelPortelas/FlightTools?tab=readme-ov-file#readme",
+    "license_url": "https://github.com/MichaelPortelas/FlightTools?tab=License-1-ov-file#readme",
+    "attribution": {
+        "text": "FlightTools By ACIV",
+        "url": "https://aircotedivoirevirtuel.com/",
+        "img": null
+    },
     "keywords": [],
     "active": 1,
     "order": 0,
